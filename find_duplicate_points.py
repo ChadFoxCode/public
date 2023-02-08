@@ -6,6 +6,27 @@ def get_duplicate_points(translation_array = None,
                          tolerance = 0.0,
                          ):
 
+    '''
+    get_duplicate_points(translation_array = None, rotation_array = None, tolerance = 0.0) 
+    
+      compares and returns indices / Point ID's with the same transform values within a provided tolerance
+
+      get_duplicate_points can find: 
+
+        - Indices (Point IDs) with duplicate translation values,
+        OR
+        - Indices (Point IDs) with duplicate rotation values 
+        OR 
+        - When providing translation and rotation arrays of values, it will compare and return indices where 2 or more indices 
+          exist in both a set translation duplicate indices and rotation duplicate indices. 
+          
+    :param: translation_array = None  - expects a list of arrays of position values, tuple, list, set, etc. eg  [(123.45, 100.1, -9000.1, ...), ...]
+    :param: translation_array = None  - expects a list of arrays of orintation values, tuple, list, set, etc. eg  [(180.45, 360.1, -90.1, ...), ...]
+    :param: tolerance = 0.0           - Default 0 tolerance, the search for duplicates will return values that are within this tolerance. definitely 
+                                        has a margin of error and better logic would be needed to find clusters of poitns that all fall within the 
+                                        tolerance. Hmmm
+     '''
+    
     #todo impliment tolerance feature. Might be optimal for speed to use rounding decimal values vs numerical comparison?
 
     t_duplicate_dict = {}
