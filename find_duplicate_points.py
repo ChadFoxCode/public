@@ -1,5 +1,13 @@
 
-
+def round_array_values(array, decimal_point):
+    rounded_array = []
+    for tup in array:
+        new_list = []
+        for value in tup:
+            rounded_value = round(value, decimal_point)
+            new_list.append(rounded_value)
+        rounded_array.append(tuple(new_list))
+    return rounded_array
 
 def get_duplicate_points(translation_array = None,
                          rotation_array = None,
