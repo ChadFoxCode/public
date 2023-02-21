@@ -17,7 +17,8 @@ def get_duplicate_points(translation_array = None,
    '''
     get_duplicate_points(translation_array = None, rotation_array = None, tolerance = None) 
     
-      Compares and returns indices / Point ID's with the same transform values within a provided tolerance
+      Compares and returns indices / Point ID's with the same transform values within a provided tolerance. 
+      The list index of each array is the same as the point ID.
       
       get_duplicate_points can find: 
         - Indices (Point IDs) with duplicate translation values,
@@ -27,9 +28,14 @@ def get_duplicate_points(translation_array = None,
         - When providing translation and rotation arrays of values, it will compare and return indices where 2 or more indices 
           exist in both a set translation duplicate indices and rotation duplicate indices. 
           
-    :param: translation_array = None  - expects a list of arrays of position values, tuple, list, set, etc. eg  [(123.45, 100.1, -9000.1, ...), ...]
-    :param: translation_array = None  - expects a list of arrays of orintation values, tuple, list, set, etc. eg  [(180.45, 360.1, -90.1, ...), ...]
-    :param: tolerance =None           - expects int value for roudning to given decimal depth
+    :param: translation_array = None  - expects a list of arrays of position values, tuple, list, set, etc. eg 
+                                            eg [(123.4521, 100.1556, -9000.1234), (123.4521, 100.1556, -9000.1234), ...]
+    :param: translation_array = None  - expects a list of arrays of orintation values, tuple, list, set, etc. eg  
+                                            eg [(180.4567, 360.12345, -90.12345), [(180.4567, 360.12345, -90.12345), ...]
+    :param: tolerance =None           - expects int value for rounding to given decimal depth
+    
+    In the example lists written above, indcies 0 and 1 would be returned 
+    
      '''
     
     if tolerance:
