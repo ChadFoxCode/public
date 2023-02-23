@@ -88,10 +88,11 @@ def get_duplicate_points(translation_array = None,
 
 
     # QC printouts --
-    print(r_duplicate_dict)
-    print(t_duplicate_dict)
-    print(len(r_duplicate_dict), len(t_duplicate_dict))
+    #print(r_duplicate_dict)
+    #print(t_duplicate_dict)
+    #print(len(r_duplicate_dict), len(t_duplicate_dict))
 
+    # Compare resulting IDs of both arrays to find ids that are duplicated in both arrays. 
     if translation_array and not rotation_array:
         return t_duplicate_indices
     elif rotation_array and not translation_array:
